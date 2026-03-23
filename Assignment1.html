@@ -8,6 +8,10 @@
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(to right, #eef2f3, #dfe9f3);
+
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     /* Header */
@@ -30,11 +34,6 @@
       margin-left: 15px;
       font-size: 18px;
       text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .social a:hover {
-      color: #38bdf8;
     }
 
     /* Menu */
@@ -49,11 +48,6 @@
       margin: 0 20px;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .menu a:hover {
-      color: #facc15;
     }
 
     /* Layout */
@@ -61,6 +55,7 @@
       display: flex;
       padding: 20px;
       gap: 20px;
+      flex: 1;
     }
 
     /* Sidebar */
@@ -68,7 +63,7 @@
       width: 25%;
       background: white;
       padding: 20px;
-      border-radius: 15px;
+      border-radius: 0;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
@@ -84,15 +79,10 @@
 
     .box {
       background: white;
-      border-radius: 15px;
+      border-radius: 0;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       overflow: hidden;
-      transition: 0.3s;
       width: 33%;
-    }
-
-    .box:hover {
-      transform: scale(1.05);
     }
 
     .box img {
@@ -111,7 +101,6 @@
       background: #1e293b;
       color: white;
       padding: 15px;
-      margin-top: 20px;
     }
   </style>
 </head>
@@ -188,9 +177,11 @@
   </div>
 
   <!-- Footer -->
-  <div class="footer">
-    © 2026 My Library | All Rights Reserved
-  </div>
+  <footer>
+    <div class="footer">
+      © 2026 My Library | All Rights Reserved
+    </div>
+  </footer>
 
 </body>
 </html>
