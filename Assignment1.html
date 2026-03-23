@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modern Library</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #eef2f3, #dfe9f3);
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: #1e293b;
+      color: white;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .social a {
+      color: white;
+      margin-left: 15px;
+      font-size: 18px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .social a:hover {
+      color: #38bdf8;
+    }
+
+    /* Menu */
+    .menu {
+      background: #334155;
+      text-align: center;
+      padding: 12px;
+    }
+
+    .menu a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .menu a:hover {
+      color: #facc15;
+    }
+
+    /* Layout */
+    .container {
+      display: flex;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 25%;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Main */
+    .main {
+      width: 75%;
+    }
+
+    .boxes {
+      display: flex;
+      gap: 20px;
+    }
+
+    .box {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: 0.3s;
+      width: 33%;
+    }
+
+    .box:hover {
+      transform: scale(1.05);
+    }
+
+    .box img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .box-content {
+      padding: 15px;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      background: #1e293b;
+      color: white;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">📚 My Library</div>
+    <div class="social">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+    </div>
+  </div>
+
+  <!-- Menu -->
+  <div class="menu">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <!-- Layout -->
+  <div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Library Info</h2>
+      <p>📖 Timing: 9 AM - 8 PM</p>
+      <p>📍 Location: Mumbai</p>
+      <h3>Categories</h3>
+      <ul>
+        <li>Fiction</li>
+        <li>Science</li>
+        <li>History</li>
+        <li>Technology</li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+      <h2>Popular Books</h2>
+
+      <div class="boxes">
+
+        <div class="box">
+          <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794" alt="book">
+          <div class="box-content">
+            <h3>The Great Fiction</h3>
+            <p>A fascinating fiction novel full of twists.</p>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="book">
+          <div class="box-content">
+            <h3>History Unfolded</h3>
+            <p>Dive into the past with engaging stories.</p>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765" alt="book">
+          <div class="box-content">
+            <h3>Science World</h3>
+            <p>Explore the wonders of science and discovery.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    © 2026 My Library | All Rights Reserved
+  </div>
+
+</body>
+</html>
