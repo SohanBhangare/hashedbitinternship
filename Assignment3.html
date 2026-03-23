@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Assignment 3 </title>
+<style>
+body { font-family: Arial; padding: 20px; }
+input, button { margin: 5px; padding: 5px; }
+.output { background: #f4f4f4; padding: 10px; margin-top: 5px; }
+</style>
+</head>
+<body>
+
+<h1>Assignment 3 </h1>
+
+<h2>Q1 Remove States Starting with Vowels</h2>
+<input id="states" placeholder="Enter states comma separated">
+<button onclick="q1()">Run</button>
+<div class="output" id="o1"></div>
+
+<h2>Q2 Reverse Sentence</h2>
+<input id="str2" placeholder="Enter sentence">
+<button onclick="q2()">Run</button>
+<div class="output" id="o2"></div>
+
+<h2>Q3 INDIA → INDONESIA</h2>
+<input id="str3" placeholder="Enter INDIA">
+<button onclick="q3()">Run</button>
+<div class="output" id="o3"></div>
+
+<h2>Q4 Count Vowels & Consonants</h2>
+<input id="str4" placeholder="Enter string (20+ chars)">
+<button onclick="q4()">Run</button>
+<div class="output" id="o4"></div>
+
+<h2>Q5 Replace Word</h2>
+<input id="s5" placeholder="Enter sentence">
+<input id="wrong" placeholder="Wrong word">
+<input id="correct" placeholder="Correct word">
+<button onclick="q5()">Run</button>
+<div class="output" id="o5"></div>
+
+<h2>Q6 Filter > 5</h2>
+<input id="arr6" placeholder="Enter numbers comma separated">
+<button onclick="q6()">Run</button>
+<div class="output" id="o6"></div>
+
+<h2>Q7 Student Average</h2>
+<button onclick="q7()">Run Default Data</button>
+<div class="output" id="o7"></div>
+
+<h2>Q8 Repeated Digit Sum</h2>
+<input id="num8" placeholder="Enter number">
+<button onclick="q8()">Run</button>
+<div class="output" id="o8"></div>
+
+<h2>Q9 Count Words</h2>
+<input id="str9" placeholder="Enter paragraph">
+<button onclick="q9()">Run</button>
+<div class="output" id="o9"></div>
+
+<h2>Q10 Reverse String</h2>
+<input id="str10" placeholder="Enter string">
+<button onclick="q10()">Run</button>
+<div class="output" id="o10"></div>
+
+<h2>Q11 Student Average Object</h2>
+<button onclick="q11()">Run Default Data</button>
+<div class="output" id="o11"></div>
+
+<script>
+function q1(){
+let arr = document.getElementById("states").value.split(",");
+let res = arr.filter(s => !/^[aeiouAEIOU]/.test(s.trim()));
+o1.innerText = JSON.stringify(res);
+}
+
+function q2(){
+let s = str2.value;
+o2.innerText = s.split(" ").reverse().join(" ");
+}
+
+function q3(){
+let arr = str3.value.split("");
+arr.splice(3,0,"O","N","E","S");
+o3.innerText = arr.join("");
+}
+
+function q4(){
+let s = str4.value.toLowerCase();
+let v=0,c=0;
+for(let ch of s){
+if(/[aeiou]/.test(ch)) v++;
+else if(/[a-z]/.test(ch)) c++;
+}
+o4.innerText = "Vowels:"+v+" Consonants:"+c;
+}
+
+function q5(){
+o5.innerText = s5.value.replace(wrong.value,correct.value);
+}
+
+function q6(){
+let arr = arr6.value.split(",").map(Number);
+o6.innerText = JSON.stringify(arr.filter(n=>n>5));
+}
+
+function q7(){
+let students=[
+{name:"Ram",scores:[80,70,60]},
+{name:"Mohan",scores:[80,70,90]},
+{name:"Sai",scores:[60,70,80]},
+{name:"Hemang",scores:[90,90,80,80]}
+];
+let res=students.map(s=>{
+let avg=s.scores.reduce((a,b)=>a+b,0)/s.scores.length;
+return {name:s.name,average:avg};
+});
+o7.innerText=JSON.stringify(res);
+}
+
+function q8(){
+let n=parseInt(num8.value);
+while(n>9){
+n=n.toString().split("").reduce((a,b)=>a+Number(b),0);
+}
+o8.innerText=n;
+}
+
+function q9(){
+o9.innerText = str9.value.trim().split(/\s+/).length;
+}
+
+function q10(){
+o10.innerText = str10.value.split("").reverse().join("");
+}
+
+function q11(){
+let data={
+student1:{subject1:44,subject2:56,subject3:87,subject4:97,subject5:37},
+student2:{subject1:44,subject2:56,subject3:87,subject4:97,subject5:37},
+student3:{subject1:44,subject2:56,subject3:87,subject4:97,subject5:37}
+};
+let res={};
+for(let key in data){
+let marks=Object.values(data[key]);
+let avg=marks.reduce((a,b)=>a+b,0)/marks.length;
+res[key]={average:avg};
+}
+o11.innerText=JSON.stringify(res);
+}
+</script>
+
+</body>
+</html>
