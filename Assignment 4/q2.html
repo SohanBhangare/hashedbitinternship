@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+
+</div>
+    <button onclick="createDiv(200, 100, 'New Box Created')">
+    Create Div
+</button>
+<script>function createDiv(width, height, text) {
+    
+    let newDiv = document.createElement("div");
+
+    
+    newDiv.style.width = width + "px";
+    newDiv.style.height = height + "px";
+
+    
+    newDiv.style.border = "1px solid black";
+    newDiv.style.margin = "10px";
+    newDiv.style.display = "flex";
+    newDiv.style.alignItems = "center";
+    newDiv.style.justifyContent = "center";
+
+    
+    newDiv.innerText = text;
+
+  
+    document.getElementById("container").appendChild(newDiv);
+}
+createDiv(200, 100, "This is sample code Avengers");</script>
+</body>
+</html>
